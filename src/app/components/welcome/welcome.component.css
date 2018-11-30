@@ -1,0 +1,14 @@
+#sign-up {
+  float: right;
+  color: #000;
+  border-radius: 28px;
+}
+
+#forgot-pw {
+  color: #000;
+  border-radius: 28px;
+}
+
+#close {
+  float: right;
+}
