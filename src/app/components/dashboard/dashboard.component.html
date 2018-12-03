@@ -1,3 +1,24 @@
-<p>
-  dashboard works!
-</p>
+<div fxLayout="column" fxLayoutAlign="10px">
+  <div fxLayout="row">
+    <div fxFlex="100" style="background: #F7F8FD; padding-left: 20%;">
+      <h1 style="color: #5A7392">
+        Donation Tracker
+      </h1>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div style="padding-left: 5%; color: #5A7392">
+      <h3>
+        Locations:
+      </h3>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutGap="10px" style="padding-left: 5%;">
+    <div fxFlex="40">
+      <app-location-details></app-location-details>
+    </div>
+    <div fxFlex="60" style="padding-right: 10px; height: 600px;">
+      <app-maps></app-maps>
+    </div>
+  </div>
+</div>

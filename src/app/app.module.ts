@@ -12,6 +12,13 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationDetailsComponent } from './components/location-details/location-details.component';
+import {FormsModule} from '@angular/forms';
+import {MatButtonModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatIconModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { InventoryDialogComponent } from './components/inventory-dialog/inventory-dialog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MapsComponent } from './components/maps/maps.component';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -20,17 +27,33 @@ import { LocationDetailsComponent } from './components/location-details/location
     SignUpComponent,
     SignInComponent,
     DashboardComponent,
-    LocationDetailsComponent
+    LocationDetailsComponent,
+    InventoryDialogComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBHeErILCNpUcQElBWUlpJdahc83ktEuB4'
+    })
   ],
   providers: [],
+  entryComponents: [
+    InventoryDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
