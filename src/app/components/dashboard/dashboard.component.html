@@ -1,19 +1,29 @@
-<div fxLayout="column" fxLayoutAlign="10px">
-  <div fxLayout="row">
-    <div fxFlex="100" style="background: #F7F8FD; padding-left: 20%;">
-      <h1 style="color: #5A7392">
-        Donation Tracker
-      </h1>
+<div fxLayout="column">
+  <div fxLayout="row" style="background: #F7F8FD;">
+    <div fxFlex="6" style="padding-left: 2%; padding-top: 10px">
+    <img src="assets/icon.png" width="50px" height="50px">
     </div>
+    <div fxFlex="20">
+      <h1 style="color: #5A7392;">Donation Tracker</h1>
+    </div>
+    <div fxFlex="63"></div>
+    <div fxFlex="10" style="padding-right: 4%">
+      <div style="padding-top: 15px; float: right">
+        <button mat-icon-button (click)="goToSettings()">
+          <mat-icon style="font-size: 50px; color: #5A7392">account_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+
   </div>
   <div fxLayout="row">
-    <div style="padding-left: 5%; color: #5A7392">
+    <div style="padding-left: 2%; color: #5A7392">
       <h3>
         Locations:
       </h3>
     </div>
   </div>
-  <div fxLayout="row" fxLayoutGap="10px" style="padding-left: 5%;">
+  <div fxLayout="row" fxLayoutGap="10px" style="padding-left: 2%;">
     <div fxFlex="40">
       <app-location-details></app-location-details>
     </div>

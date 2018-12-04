@@ -13,12 +13,23 @@ import {environment} from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationDetailsComponent } from './components/location-details/location-details.component';
 import {FormsModule} from '@angular/forms';
-import {MatButtonModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatIconModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatToolbarModule
+} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { InventoryDialogComponent } from './components/inventory-dialog/inventory-dialog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MapsComponent } from './components/maps/maps.component';
 import {AgmCoreModule} from '@agm/core';
+import {MockDataService} from './services/mock-data.service';
+import {DataService} from './services/data.service';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +40,8 @@ import {AgmCoreModule} from '@agm/core';
     DashboardComponent,
     LocationDetailsComponent,
     InventoryDialogComponent,
-    MapsComponent
+    MapsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +58,17 @@ import {AgmCoreModule} from '@agm/core';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
+    FormsModule,
+    MatInputModule,
+    MatToolbarModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBHeErILCNpUcQElBWUlpJdahc83ktEuB4'
     })
   ],
-  providers: [],
+  providers: [
+    MockDataService,
+    DataService
+  ],
   entryComponents: [
     InventoryDialogComponent
   ],

@@ -1,28 +1,36 @@
-<div fxLayout="column" fxLayoutGap="8px">
-  <div fxLayout="row" *ngFor="let location of locations">
-    <div fxFlex="100">
-      <mat-card class="location" style="background: #F7F8FD; color: #5A7392;">
-        <mat-card-title>
-          {{location.name}}
-        </mat-card-title>
-        <mat-card-content>
-          <a href="https://{{location.website}}">Website</a>
-          <p>
-            {{location.streetAddress}}, {{location.city}} {{location.state}} {{ location.zip}}
-          </p>
-          <p>
-            {{location.phone}}
-          </p>
-          <p>
-            {{location.type}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button (click)="openInventory(location.id)">
-            Inventory
-          </button>
-        </mat-card-actions>
-      </mat-card>
+<div fxLayout="column" fxLayoutGap="12px" style="max-height: 600px; overflow-y: scroll; overflow-x: hidden">
+  <div fxFlex="100">
+    <div fxLayout="row" *ngFor="let location of locations">
+      <div fxFlex="100">
+        <mat-card class="location" style="background: #F7F8FD; color: #5A7392;">
+          <mat-card-title>
+            {{location.name}}
+          </mat-card-title>
+          <mat-card-content>
+            <div fxLayout="column">
+              <div fxLayout="row">
+                <mat-icon style="font-size: medium">language</mat-icon>
+                <a href="https://{{location.website}}">Website</a>
+              </div>
+              <div fxLayout="row">
+                <mat-icon style="font-size: medium">local_phone</mat-icon>
+                {{location.phone}}
+              </div>
+              <div fxLayout="row">
+                <mat-icon style="font-size: medium">location_on</mat-icon>
+                {{location.streetAddress}}, {{location.city}} {{location.state}} {{ location.zip}}
+              </div>
+              <div fxLayout="row">
+                <mat-icon style="font-size: medium">home</mat-icon>
+                {{location.type}}
+              </div>
+            </div>
+            <button mat-button (click)="openInventory(location.id)">
+              Inventory
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
   </div>
 </div>
