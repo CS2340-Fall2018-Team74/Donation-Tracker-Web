@@ -9,22 +9,32 @@ import {Router} from '@angular/router';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  // user: User = new User();
-  signInSuccessful: boolean;
-  constructor(private route: Router) { }
+  user: User = new User();
+  signInSuccessful = true;
+  validSignInInfo = true;
+
+  constructor(private route: Router,
+              private _mock: MockDataService) { }
 
   ngOnInit() {
-    // this._mockData.initializeAccounts();
+    this._mock.initializeAccounts();
   }
 
   signIn() {
-    // console.log(this.user);
-    // if (this._mockData.findUser(this.user)) {
-    //   this.signInSuccessful = true;
-      this.route.navigateByUrl('dashboard');
-    // } else {
-    //   this.signInSuccessful = false;
-    // }
+    if (this._mock.validateSignInInfo(this.user)) {
+      this.validSignInInfo = true;
+      if (this._mock.findUser(this.user)) {
+        this.signInSuccessful = true;
+        this.route.navigateByUrl('dashboard');
+      } else {
+        this.signInSuccessful = false;
+      }
+    } else {
+      this.validSignInInfo = false;
+    }
   }
 
+  goTosignUp() {
+    this.route.navigateByUrl('sign-up');
+  }
 }

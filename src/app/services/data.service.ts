@@ -49,4 +49,8 @@ export class DataService {
       return locations;
     }));
   }
+
+  addItem(item: Item, locationID: string) {
+    return this._db.collection('Locations').doc(locationID).collection('Items').add(<any> item.firebaseFormat());
+  }
 }

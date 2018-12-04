@@ -22,7 +22,6 @@ export class LocationDetailsComponent implements OnInit {
   ngOnInit() {
     this._data.getLocations().subscribe(locations => {
       this.locations = locations;
-      console.log(this.locations);
     });
   }
 
@@ -31,9 +30,20 @@ export class LocationDetailsComponent implements OnInit {
       console.log(items);
       this._dialog.open(InventoryDialogComponent, {
         data: {
-          items: items
+          items: items,
+          locationName: this.getLocationName(locationId),
+          locationID: locationId
         }
       });
     });
+  }
+  getLocationName(locationId: string): string {
+    let name = '';
+      this.locations.forEach((location) => {
+        if (location.id === locationId) {
+          name = location.name;
+        }
+      });
+      return name;
   }
 }

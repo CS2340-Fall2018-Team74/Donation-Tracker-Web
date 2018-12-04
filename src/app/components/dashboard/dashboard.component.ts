@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  goToSettings() {
-    this.route.navigateByUrl('settings');
+  signOut() {
+    this.route.navigateByUrl('welcome');
   }
 }

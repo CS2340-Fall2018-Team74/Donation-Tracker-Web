@@ -1,3 +1,51 @@
-<p>
-  Sign up works
-</p>
+<div fxLayout="row">
+  <div fxLayout="column" fxFlex="15"></div>
+  <div fxLayout="column" fxFlex="40">
+    <div fxLayout="row">
+      <img src="assets/logo.png" width="400px" height="400px">
+    </div>
+  </div>
+
+  <div fxLayout="column" fxFlex="30" fxLayoutAlign="center">
+    <h1 style="color: #5A7392;">Donation Tracker</h1>
+    <div>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Name" class="signUp" [(ngModel)]="user.name" style="color: #5A7392;">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="email" placeholder="Email" class="signIn" [(ngModel)]="user.email" style="color: #5A7392;">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" class="signIn" [(ngModel)]="user.password" style="color: #5A7392;">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Confirm Password" class="signIn" [(ngModel)]="user.password" style="color: #5A7392;">
+      </mat-form-field>
+    </div>
+    <button mat-button (click)="signUp()" style="color: #5A7392; width: 60%">Sign up</button>
+    <button mat-button (click)="goToSignIn()" style="color: #5A7392; width: 60%">Have an account? Sign in</button>
+    <div *ngIf="!validSignUpInfo" style="font-size: smaller; color: red">
+      <p>
+        Name length / password / email may be invalid.
+      </p>
+      <p>
+        Name length has to be at least 3.
+      </p>
+      <p>
+        Password length has to be at least 6.
+      </p>
+    </div>
+    <div *ngIf="!signUpSuccessful">
+      <p>
+        Account already exists.
+      </p>
+    </div>
+  </div>
+  <div fxLayout="column" fxFlex="15"></div>
+</div>

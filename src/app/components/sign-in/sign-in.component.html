@@ -12,11 +12,27 @@
       <mat-form-field>
         <input matInput type="email" placeholder="Email" class="signIn" [(ngModel)]="user.email" style="color: #5A7392;">
       </mat-form-field>
+    </div>
+    <div>
       <mat-form-field>
         <input matInput type="password" placeholder="Password" class="signIn" [(ngModel)]="user.password" style="color: #5A7392;">
       </mat-form-field>
     </div>
-    <button mat-button (click)="signIn()" style="color: #5A7392;">Sign in</button>
+    <button mat-button (click)="signIn()" style="color: #5A7392; width: 60%">Sign in</button>
+    <button mat-button (click)="goTosignUp()" style="color: #5A7392; width: 60%">No account? Sign up</button>
+    <div *ngIf="!validSignInInfo" style="font-size: smaller; color: red">
+      <p>
+        Password / email may be invalid.
+      </p>
+      <p>
+        Password length has to be at least 6.
+      </p>
+    </div>
+    <div *ngIf="!signInSuccessful">
+      <p>
+        Account doesn't exists.
+      </p>
+    </div>
   </div>
   <div fxLayout="column" fxFlex="15"></div>
 </div>

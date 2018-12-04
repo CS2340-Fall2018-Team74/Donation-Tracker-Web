@@ -1,0 +1,17 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px" style="color: #5A7392; height: 400px; width: 300px; max-height: 500px;">
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="item.name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Category" [(ngModel)]="item.category">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Quantity" [(ngModel)]="item.quantity">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Uri" [(ngModel)]="item.uri">
+  </mat-form-field>
+  <button mat-button (click)="newItemAdd()">
+    Add
+  </button>
+</div>

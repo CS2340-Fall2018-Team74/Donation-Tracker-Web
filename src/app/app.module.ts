@@ -19,7 +19,7 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatListModule,
   MatToolbarModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -30,6 +30,7 @@ import {AgmCoreModule} from '@agm/core';
 import {MockDataService} from './services/mock-data.service';
 import {DataService} from './services/data.service';
 import { SettingsComponent } from './components/settings/settings.component';
+import { NewItemComponent } from './components/new-item/new-item.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     LocationDetailsComponent,
     InventoryDialogComponent,
     MapsComponent,
-    SettingsComponent
+    SettingsComponent,
+    NewItemComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ import { SettingsComponent } from './components/settings/settings.component';
     FormsModule,
     MatInputModule,
     MatToolbarModule,
+    MatListModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBHeErILCNpUcQElBWUlpJdahc83ktEuB4'
     })
@@ -70,7 +73,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     DataService
   ],
   entryComponents: [
-    InventoryDialogComponent
+    InventoryDialogComponent,
+    NewItemComponent
   ],
   bootstrap: [AppComponent]
 })
